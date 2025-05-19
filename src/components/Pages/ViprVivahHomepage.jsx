@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Home, MessageSquare, Moon, Sun, Play, Heart, ArrowRight } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
-import wedImg from '../../../assets/wedImg.avif';
+import Image2 from '../../../assets/images/image2.png';
 
 const ViprVivahHomepage = () => {
   const { darkMode, toggleDarkMode } = useTheme();
@@ -48,39 +48,45 @@ const ViprVivahHomepage = () => {
         </div>
       </nav>
 
-      {/* Hero Section with Parallax */}
-      <div className="relative h-screen overflow-hidden">
+      {/* Hero Section */}
+      <div className="relative h-screen w-full overflow-hidden">
+        {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110"
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
           style={{ 
-            backgroundImage: `url(${wedImg})`,
-            transform: 'translateZ(0)',
+            backgroundImage: `url(${Image2})`,
+            transform: 'scale(1.1)',
             willChange: 'transform',
             backfaceVisibility: 'hidden'
           }}
-        >
-          <div className={`absolute inset-0 ${
-            darkMode 
-              ? 'bg-gradient-to-r from-gray-800/90 to-gray-900/90' 
-              : 'bg-gradient-to-r from-red-500/80 to-red-700/80'
-          } transition-colors duration-200`}></div>
-        </div>
-        <div className="relative flex flex-col items-center justify-center h-full text-white text-center px-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 mt-16">
-            अखंड एवं विराट विप्र समाज को समर्पित
-          </h1>
-          
-          <Link 
-            to="/login" 
-            className={`${
-              darkMode 
-                ? 'bg-gray-800 text-white hover:bg-gray-700' 
-                : 'bg-white text-red-500 hover:bg-gray-100'
-            } rounded-full py-4 px-10 text-lg font-medium transition-all flex items-center shadow-lg hover:shadow-xl transform hover:scale-105 duration-200`}
-          >
-            <span>Let's Begin</span>
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Link>
+        />
+        
+        {/* Subtle Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-black/20"></div>
+        
+        {/* Content */}
+        <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 drop-shadow-lg">
+              अखंड एवं विराट विप्र समाज को समर्पित
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-white mb-8 drop-shadow-md max-w-2xl mx-auto">
+              Find your perfect match in the Brahmin community with our trusted matrimonial service
+            </p>
+            
+            <Link 
+              to="/login" 
+              className={`inline-flex items-center px-8 py-4 text-lg font-medium rounded-full 
+                ${darkMode 
+                  ? 'bg-white text-gray-900 hover:bg-gray-100' 
+                  : 'bg-white text-red-500 hover:bg-gray-100'
+                } transition-all duration-300 transform hover:scale-105 shadow-xl`}
+            >
+              <span className="mr-2">Let's Begin</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -88,7 +94,7 @@ const ViprVivahHomepage = () => {
       <section className={`relative py-20 ${darkMode ? 'bg-gray-800' : 'bg-white'} transition-colors duration-200`}>
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed opacity-10"
-          style={{ backgroundImage: `url(${wedImg})` }}
+          style={{ backgroundImage: `url(${Image2})` }}
         ></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className={`${darkMode ? 'bg-gray-700' : 'bg-gray-50'} shadow-lg rounded-lg p-12 max-w-4xl mx-auto transition-colors duration-200`}>
@@ -113,7 +119,7 @@ const ViprVivahHomepage = () => {
       <section className={`relative py-20 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-200`}>
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed opacity-10"
-          style={{ backgroundImage: `url(${wedImg})` }}
+          style={{ backgroundImage: `url(${Image2})` }}
         ></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg rounded-lg p-12 max-w-4xl mx-auto transition-colors duration-200`}>
